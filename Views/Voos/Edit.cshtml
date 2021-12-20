@@ -1,0 +1,50 @@
+﻿@model webTeste.Models.Voo
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<main class="vh-100 ">
+<h1>Editar</h1>
+
+<h4>Voo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id_Voo" />
+            <div class="form-group">
+                <label asp-for="Data_Partida" class="control-label"></label>
+                <input asp-for="Data_Partida" class="form-control" />
+                <span asp-validation-for="Data_Partida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Data_Retorno" class="control-label"></label>
+                <input asp-for="Data_Retorno" class="form-control" />
+                <span asp-validation-for="Data_Retorno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Destino" class="control-label"></label>
+                <input asp-for="Destino" class="form-control" />
+                <span asp-validation-for="Destino" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Id_cliente" class="control-label"></label>
+                <input asp-for="Id_cliente" class="form-control" />
+                <span asp-validation-for="Id_cliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+            <br>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a type="button" class="btn btn-primary" asp-controller="Voos" asp-action="Index">Voltar</a>
+</div>
+</main>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

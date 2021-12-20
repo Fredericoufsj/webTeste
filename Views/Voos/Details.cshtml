@@ -1,0 +1,43 @@
+﻿@model webTeste.Models.Voo
+
+@{
+    ViewData["Title"] = "Details";
+}
+<main class="vh-100 ">
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Voo</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Data_Partida)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Data_Partida)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Data_Retorno)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Data_Retorno)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Destino)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Destino)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id_cliente)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id_cliente)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a type="button" class="btn btn-primary" asp-action="Edit" asp-route-id="@Model?.Id_Voo">Editar</a> |
+    <a type="button" class="btn btn-primary" asp-controller="Voos" asp-action="Index">Voltar</a>
+</div>
+</main>

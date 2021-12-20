@@ -1,0 +1,43 @@
+﻿@model IEnumerable<webTeste.Models.Contato>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main class="vh-100 ">
+<h1>Contatos</h1>
+
+<p>
+    <a type="button" class="btn btn-primary" asp-controller="Contatos" asp-action="Create">Cadastar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mensagem)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mensagem)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id_Contato"><i class="bi bi-pencil-fill" title="editar" style="font-size: 1rem; color: cornflowerblue;"></i></a> |
+                <a asp-action="Details" asp-route-id="@item.Id_Contato"><i class="bi bi-card-checklist" title="detalhes" style="font-size: 1rem; color: cornflowerblue";></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.Id_Contato"><i class="bi bi-trash-fill" title="Excluir" style="font-size: 1rem; color: cornflowerblue;"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</main>

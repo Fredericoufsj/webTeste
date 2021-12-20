@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - webTeste</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />    
+    <link rel="stylesheet" href="~/webTeste.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+</head>
+<body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark nav-cor">
+        <div class="container-fluid">
+            <a class="navbar-brand"asp-area="" asp-controller="Home" asp-action="Index">Agencia Voo Feliz</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" asp-area="" asp-controller="Clientes" asp-action="Index">CLIENTES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" asp-area="" asp-controller="Home" asp-action="Promocoes">PROMOÇÕES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" asp-area="" asp-controller="Contatos" asp-action="Index">CONTATOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" asp-area="" asp-controller="Voos" asp-action="Index">DESTINOS</a>
+                    </li>
+                  </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class=" text-white text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3 nav-cor">
+            &copy; 2021 Atividade Módulo 3 - Recode Pro
+            <a asp-area="" asp-controller="Home"  asp-action="https://github.com/Fredericoufsj">Desenvolvido por: Frederico Thomaz dos Santos</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

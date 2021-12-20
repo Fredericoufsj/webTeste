@@ -1,0 +1,54 @@
+﻿@model IEnumerable<webTeste.Models.Voo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<main class="vh-100 ">
+<h1>Destinos Cadastrados</h1>
+
+<p>
+    <a type="button" class="btn btn-primary" asp-controller="Voos" asp-action="Create">Cadastar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Data_Partida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data_Retorno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id_cliente)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data_Partida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data_Retorno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_cliente)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id_Voo"><i class="bi bi-pencil-fill" title="editar" style="font-size: 1rem; color: cornflowerblue;"></i></a> |
+                <a asp-action="Details" asp-route-id="@item.Id_Voo"><i class="bi bi-card-checklist" title="detalhes" style="font-size: 1rem; color: cornflowerblue";></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.Id_Voo"><i class="bi bi-trash-fill" title="Excluir" style="font-size: 1rem; color: cornflowerblue;"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</main>
